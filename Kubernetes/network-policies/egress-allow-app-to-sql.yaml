@@ -1,0 +1,15 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: egress-allow-ubuntu-to-sql
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: ubuntu
+  policyTypes:
+    - Egress
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 10.225.0.4/32 # Private IP of SQL server
