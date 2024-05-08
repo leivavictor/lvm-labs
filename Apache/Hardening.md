@@ -8,6 +8,12 @@ Example: /etc/apache2/sites-available/
 
 ### Enable HTTPS:
 
+- Enable SSL module by executing:
+
+    ```
+    sudo a2enmod ssl
+    ```
+  
 - Open Site configuration File
 
 - Add the following configuration
@@ -27,6 +33,21 @@ Example: /etc/apache2/sites-available/
     </VirtualHost>
 
     ```
+## Permanent redirection from HTTP to HTTPS
+
+
+- Add the following configuration to the site configuration file
+
+    ```
+    <VirtualHost *:80> 
+      ServerName example.com
+      ServerAlias www.example.com
+
+      Redirect permanent / https://example.com/
+    </VirtualHost>
+    ```
+
+
 
 ## Hide Server headers
 
