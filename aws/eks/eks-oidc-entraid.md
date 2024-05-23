@@ -19,8 +19,11 @@ Entra ID tenant ID: $TENANT_ID
 On the EKS Cluster configure an identity provider with the values from the app registration created in step 2 for prerequisites.
 
 Client ID: Client id of the app registration
+
 Group Claims: group
+
 Issuer URL: https://sts.windows.net/${TENANT_ID}/
+
 User Claim: oid (upn can be selected but does not work with service principals)
 
 ## Login
